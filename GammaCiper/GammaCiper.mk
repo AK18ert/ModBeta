@@ -6,8 +6,8 @@
 ProjectName            :=GammaCiper
 ConfigurationName      :=Debug
 WorkspaceConfiguration :=Debug
-WorkspacePath          :=/home/andrey/Загрузки/ModBeta
-ProjectPath            :=/home/andrey/Загрузки/ModBeta/GammaCiper
+WorkspacePath          :=/home/andrey/git_exercise/ModBeta
+ProjectPath            :=/home/andrey/git_exercise/ModBeta/GammaCiper
 IntermediateDirectory  :=../build-$(WorkspaceConfiguration)/GammaCiper
 OutDir                 :=$(IntermediateDirectory)
 CurrentFileName        :=
@@ -29,7 +29,7 @@ OutputSwitch           :=-o
 LibraryPathSwitch      :=-L
 PreprocessorSwitch     :=-D
 SourceSwitch           :=-c 
-OutputDirectory        :=/home/andrey/Загрузки/ModBeta/build-$(WorkspaceConfiguration)/bin
+OutputDirectory        :=/home/andrey/git_exercise/ModBeta/build-$(WorkspaceConfiguration)/bin
 OutputFile             :=../build-$(WorkspaceConfiguration)/bin/$(ProjectName)
 Preprocessors          :=
 ObjectSwitch           :=-o 
@@ -94,12 +94,12 @@ PreBuild:
 ## Objects
 ##
 $(IntermediateDirectory)/main.cpp$(ObjectSuffix): main.cpp 
-	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/andrey/Загрузки/ModBeta/GammaCiper/main.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/main.cpp$(ObjectSuffix) $(IncludePath)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/andrey/git_exercise/ModBeta/GammaCiper/main.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/main.cpp$(ObjectSuffix) $(IncludePath)
 $(IntermediateDirectory)/main.cpp$(PreprocessSuffix): main.cpp
 	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/main.cpp$(PreprocessSuffix) main.cpp
 
 $(IntermediateDirectory)/GammaCiper.cpp$(ObjectSuffix): GammaCiper.cpp 
-	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/andrey/Загрузки/ModBeta/GammaCiper/GammaCiper.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/GammaCiper.cpp$(ObjectSuffix) $(IncludePath)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/andrey/git_exercise/ModBeta/GammaCiper/GammaCiper.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/GammaCiper.cpp$(ObjectSuffix) $(IncludePath)
 $(IntermediateDirectory)/GammaCiper.cpp$(PreprocessSuffix): GammaCiper.cpp
 	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/GammaCiper.cpp$(PreprocessSuffix) GammaCiper.cpp
 

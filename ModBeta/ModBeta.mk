@@ -6,8 +6,8 @@
 ProjectName            :=ModBeta
 ConfigurationName      :=Debug
 WorkspaceConfiguration :=Debug
-WorkspacePath          :=/home/andrey/Загрузки/ModBeta
-ProjectPath            :=/home/andrey/Загрузки/ModBeta/ModBeta
+WorkspacePath          :=/home/andrey/git_exercise/ModBeta
+ProjectPath            :=/home/andrey/git_exercise/ModBeta/ModBeta
 IntermediateDirectory  :=$(ConfigurationName)
 OutDir                 := $(IntermediateDirectory)
 CurrentFileName        :=
@@ -94,12 +94,12 @@ PreBuild:
 ## Objects
 ##
 $(IntermediateDirectory)/main.cpp$(ObjectSuffix): main.cpp
-	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/andrey/Загрузки/ModBeta/ModBeta/main.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/main.cpp$(ObjectSuffix) $(IncludePath)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/andrey/git_exercise/ModBeta/ModBeta/main.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/main.cpp$(ObjectSuffix) $(IncludePath)
 $(IntermediateDirectory)/main.cpp$(PreprocessSuffix): main.cpp
 	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/main.cpp$(PreprocessSuffix) main.cpp
 
 $(IntermediateDirectory)/modAlphaCipher.cpp$(ObjectSuffix): modAlphaCipher.cpp
-	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/andrey/Загрузки/ModBeta/ModBeta/modAlphaCipher.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/modAlphaCipher.cpp$(ObjectSuffix) $(IncludePath)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/andrey/git_exercise/ModBeta/ModBeta/modAlphaCipher.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/modAlphaCipher.cpp$(ObjectSuffix) $(IncludePath)
 $(IntermediateDirectory)/modAlphaCipher.cpp$(PreprocessSuffix): modAlphaCipher.cpp
 	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/modAlphaCipher.cpp$(PreprocessSuffix) modAlphaCipher.cpp
 

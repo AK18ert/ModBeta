@@ -60,6 +60,12 @@ int main(int argc, char** argv)
 			} else if(op > 0) {
 				wcout << L"Введите текст: ";
 				getline(wcin, text);
+				if (key > text.length()){
+					wcout << L"Операция отменена: Ключ не соответствует размеру текста\n";
+					wcin.clear();
+					wcin.ignore(numeric_limits<streamsize>::max(), L'\n');
+					continue;
+					}
 				if(op == 1) {
 					wcout << L"Зашифрованный текст: " << endl;
 					wcout << cipher.encrypt(text) << endl;
