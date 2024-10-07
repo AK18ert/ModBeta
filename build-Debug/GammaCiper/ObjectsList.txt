@@ -1,0 +1,1 @@
+../build-Debug/GammaCiper/main.cpp.o ../build-Debug/GammaCiper/GammaCiper.cpp.o

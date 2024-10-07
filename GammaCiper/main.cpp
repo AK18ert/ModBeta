@@ -2,8 +2,11 @@
 #include <iostream>
 #include <limits>
 #include <locale>
+#include <map>
 #include <string>
-
+#include <vector>
+#include <stdexcept>
+#include <codecvt>
 using namespace std;
 
 int main(int argc, char** argv)

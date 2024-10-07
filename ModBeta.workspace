@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CodeLite_Workspace Name="ModBeta" Database="" Version="10000">
-  <Project Name="ModBeta" Path="ModBeta/ModBeta.project" Active="Yes"/>
-  <Project Name="GammaCiper" Path="GammaCiper/GammaCiper.project" Active="No"/>
+  <Project Name="ModBeta" Path="ModBeta/ModBeta.project" Active="No"/>
+  <Project Name="GammaCiper" Path="GammaCiper/GammaCiper.project" Active="Yes"/>
   <Project Name="modAlphaCipher" Path="modAlphaCipher/modAlphaCipher.project" Active="No"/>
   <BuildMatrix>
     <WorkspaceConfiguration Name="Debug">

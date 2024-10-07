@@ -23,6 +23,9 @@ public:
     modAlphaCipher(const std::wstring& skey); //конструктор для установки ключа
     std::wstring encrypt(const std::wstring& open_text);   //зашифрование
     std::wstring decrypt(const std::wstring& cipher_text); //расшифрование
+	
+	
+	
 };
 
 class cipher_error: public std::invalid_argument {
