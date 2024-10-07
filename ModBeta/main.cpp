@@ -1,12 +1,15 @@
 #include "modAlphaCipher.h"
-
+#include <stdexcept>
 #include <cctype>
 #include <iostream>
 #include <locale>
 #include <string>
+#include <codecvt>
+
 
 using namespace std;
 
+/*
 bool isGood(const wstring& s)
 {
     for(auto c : s) {
@@ -56,7 +59,36 @@ int main(int argc, char** argv)
                 wcout << "Operation aborted: неправильный текст\n";
             }
         }
-    } while(op != 0);
+    } while(op != 0);    setlocale(LC_ALL, "ru_RU.UTF-8");
+
 
     return 0;
+}
+*/
+
+void check(const wstring& Text, const wstring& key, const bool destructCipherText=false)
+{ 
+	try {
+		setlocale(LC_ALL, "ru_RU.UTF-8");
+		wstring cipherText;
+		wstring decryptedText;
+		modAlphaCipher cipher(key);
+		cipherText = cipher.encrypt(Text); // зашифровывание
+		if (destructCipherText) // надо "портить"?
+			cipherText.front() = tolower(cipherText.front()); 
+		decryptedText = cipher.decrypt(cipherText); // расшифровывание
+		wcout<<"key="<<key<<endl;
+		wcout<<Text<<endl;
+		wcout<<cipherText<<endl;
+		wcout<<decryptedText<<endl;
+	} catch (const cipher_error & e) {
+		cerr<<"Error: "<<e.what()<<endl;
+	}
+}
+
+int main(int argc, char **argv)
+{ 
+	setlocale(LC_ALL, "ru_RU.UTF-8");
+	check(L"МАМАМЫЛАРАМУ", L"КОЛЯ");
+	return 0;
 }

@@ -3,12 +3,12 @@
 ## any manual changes will be erased      
 ##
 ## Debug
-ProjectName            :=GammaCiper
+ProjectName            :=modAlphaCipher
 ConfigurationName      :=Debug
 WorkspaceConfiguration :=Debug
 WorkspacePath          :=/home/andrey/git_exercise/ModBeta
-ProjectPath            :=/home/andrey/git_exercise/ModBeta/GammaCiper
-IntermediateDirectory  :=../build-$(WorkspaceConfiguration)/GammaCiper
+ProjectPath            :=/home/andrey/git_exercise/ModBeta/modAlphaCipher
+IntermediateDirectory  :=../build-$(WorkspaceConfiguration)/modAlphaCipher
 OutDir                 :=$(IntermediateDirectory)
 CurrentFileName        :=
 CurrentFilePath        :=
@@ -62,7 +62,7 @@ AS       := as
 ## User defined environment variables
 ##
 CodeLiteDir:=/usr/share/codelite
-Objects0=$(IntermediateDirectory)/main.cpp$(ObjectSuffix) $(IntermediateDirectory)/GammaCiper.cpp$(ObjectSuffix) 
+Objects0=$(IntermediateDirectory)/modAlphaCipher.cpp$(ObjectSuffix) $(IntermediateDirectory)/main.cpp$(ObjectSuffix) 
 
 
 
@@ -93,15 +93,15 @@ PreBuild:
 ##
 ## Objects
 ##
+$(IntermediateDirectory)/modAlphaCipher.cpp$(ObjectSuffix): modAlphaCipher.cpp 
+	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/andrey/git_exercise/ModBeta/modAlphaCipher/modAlphaCipher.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/modAlphaCipher.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/modAlphaCipher.cpp$(PreprocessSuffix): modAlphaCipher.cpp
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/modAlphaCipher.cpp$(PreprocessSuffix) modAlphaCipher.cpp
+
 $(IntermediateDirectory)/main.cpp$(ObjectSuffix): main.cpp 
-	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/andrey/git_exercise/ModBeta/GammaCiper/main.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/main.cpp$(ObjectSuffix) $(IncludePath)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/andrey/git_exercise/ModBeta/modAlphaCipher/main.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/main.cpp$(ObjectSuffix) $(IncludePath)
 $(IntermediateDirectory)/main.cpp$(PreprocessSuffix): main.cpp
 	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/main.cpp$(PreprocessSuffix) main.cpp
-
-$(IntermediateDirectory)/GammaCiper.cpp$(ObjectSuffix): GammaCiper.cpp 
-	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/andrey/git_exercise/ModBeta/GammaCiper/GammaCiper.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/GammaCiper.cpp$(ObjectSuffix) $(IncludePath)
-$(IntermediateDirectory)/GammaCiper.cpp$(PreprocessSuffix): GammaCiper.cpp
-	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/GammaCiper.cpp$(PreprocessSuffix) GammaCiper.cpp
 
 ##
 ## Clean

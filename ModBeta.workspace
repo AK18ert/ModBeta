@@ -1,19 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CodeLite_Workspace Name="ModBeta" Database="" Version="10000">
-  <Project Name="ModBeta" Path="ModBeta/ModBeta.project" Active="No"/>
-  <Project Name="GammaCiper" Path="GammaCiper/GammaCiper.project" Active="Yes"/>
+  <Project Name="ModBeta" Path="ModBeta/ModBeta.project" Active="Yes"/>
+  <Project Name="GammaCiper" Path="GammaCiper/GammaCiper.project" Active="No"/>
+  <Project Name="modAlphaCipher" Path="modAlphaCipher/modAlphaCipher.project" Active="No"/>
   <BuildMatrix>
     <WorkspaceConfiguration Name="Debug">
       <Environment/>
       <Project Name="ModBeta" ConfigName="Debug"/>
       <Project Name="GammaCiper" ConfigName="Debug"/>
       <Project Name="GammaCiper" ConfigName="Debug"/>
+      <Project Name="modAlphaCipher" ConfigName="Debug"/>
     </WorkspaceConfiguration>
     <WorkspaceConfiguration Name="Release">
       <Environment/>
       <Project Name="ModBeta" ConfigName="Release"/>
       <Project Name="GammaCiper" ConfigName="Release"/>
       <Project Name="GammaCiper" ConfigName="Release"/>
+      <Project Name="modAlphaCipher" ConfigName="Release"/>
     </WorkspaceConfiguration>
   </BuildMatrix>
 </CodeLite_Workspace>

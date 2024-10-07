@@ -1,20 +1,19 @@
 #include "modAlphaCipher.h"
-
 modAlphaCipher::modAlphaCipher(const std::wstring& skey)
 {
     for(unsigned i = 0; i < numAlpha.size(); i++) {
         alphaNum[numAlpha[i]] = i;
     }
-    key = convert(skey);
+    key = convert(getValidKey(skey));
 }
 std::wstring modAlphaCipher::encrypt(const std::wstring& open_text)
 {
-    std::vector<int> work = convert(open_text);
-    std::cout << "work: ";
+    std::vector<int> work = convert(getValidOpenText(open_text));
+    /*std::cout << "work: ";
     for(int num : work) {
         std::cout << num << " ";
     }
-    std::cout << std::endl;
+    std::cout << std::endl;*/
     for(unsigned i = 0; i < work.size(); i++) {
         work[i] = (work[i] + key[i % key.size()]) % alphaNum.size();
     }
@@ -22,7 +21,7 @@ std::wstring modAlphaCipher::encrypt(const std::wstring& open_text)
 }
 std::wstring modAlphaCipher::decrypt(const std::wstring& cipher_text)
 {
-    std::vector<int> work = convert(cipher_text);
+    std::vector<int> work = convert(getValidCipherText(cipher_text));
     for(unsigned i = 0; i < work.size(); i++) {
         work[i] = (work[i] + alphaNum.size() - key[i % key.size()]) % alphaNum.size();
     }
@@ -43,4 +42,58 @@ inline std::wstring modAlphaCipher::convert(const std::vector<int>& v)
         result.push_back(numAlpha[i]);
     }
     return result;
+}
+
+inline std::wstring modAlphaCipher::getValidKey(const std::wstring& s)
+{
+    if(s.empty())
+        throw cipher_error("Empty key");
+    std::wstring tmp(s);
+    std::wstring_convert<std::codecvt_utf8<wchar_t>, wchar_t> converter; 
+	std::string m = converter.to_bytes(tmp);
+    for(auto& c : tmp) {
+        if(!iswalpha(c))
+            throw cipher_error(std::string("Неправильный ключ: ") + m);
+        if(iswlower(c))
+            c = towupper(c);
+    }
+    return tmp;
+}
+
+inline std::wstring modAlphaCipher::getValidOpenText(const std::wstring& s)
+{
+    std::wstring tmp;
+	std::wstring_convert<std::codecvt_utf8<wchar_t>, wchar_t> converter; 
+    std::string m = converter.to_bytes(tmp);
+    for(auto c : s) {
+        if(iswalpha(c)) {
+            if(iswlower(c))
+                tmp.push_back(towupper(c));
+            else
+                tmp.push_back(c);
+        }
+    }
+    if(tmp.empty())
+        throw cipher_error("Пустой открытый текст");
+    return tmp;
+}
+
+inline std::wstring modAlphaCipher::getValidCipherText(const std::wstring& s)
+{
+    if (s.empty())
+        throw cipher_error("Empty cipher text");
+
+    std::wstring tmp(s);
+	std::wstring_convert<std::codecvt_utf8<wchar_t>, wchar_t> converter; 
+    std::string m = converter.to_bytes(tmp);
+    for (auto& c : tmp) {
+        if (!iswupper(c)) {
+            // Convert wstring to string for error message
+            std::string error_msg = "Invalid cipher text: ";
+            error_msg += m;
+            throw cipher_error(error_msg);
+        }
+    }
+
+    return tmp;
 }
